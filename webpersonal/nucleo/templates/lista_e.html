@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        {% for e in empresas %}
+        <li> {{ e }}
+            <ul> 
+                {% for emple in empleados %}
+                    {% ifequal emple.emp.nom e.nom %}
+                        <li> {{ emple.nombre }} </li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

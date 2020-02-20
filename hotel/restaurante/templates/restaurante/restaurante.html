@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+  <div class="contenido">
+    <h1>Restaurante</h1>
+    <p>Salón comedor y terraza con diferentes ambientes, te ofrecemos una amplia variedad 
+      de platos tradicionales de cocina española e internacional, en un entorno envidiable.
+      Contamos con una variedad de menús que se adaptan a las necesidades diarias.
+    </p>
+  </div>
+
+  <!-- Opciones del restaurante -->
+  <div class="fila">
+
+    <!-- Carta -->
+    <div class="columna">
+      <div class="tarjeta">
+        <p>Prueba nuestros deliciosos platos.</p>
+        <a href="{% url 'carta' %}">
+          <button class="boton1"><span>CARTA</span></button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Menus -->
+    <div class="columna">
+      <div class="tarjeta">
+        <p>Menús para todos los bolsillos.</p>
+        <a href="{% url 'menus' %}">
+          <button class="boton1"><span>MENÚS</span></button>
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- Fin de las opciones del restaurante -->
+{% endblock %}
+
+</html>

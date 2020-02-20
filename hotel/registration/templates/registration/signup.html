@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% extends 'gestion/base.html' %}
+{% block content %}
+<div class="contenido contenido2">
+  <h1>REGISTRATE</h1>
+  
+  <div class="formulario">
+    <form action="" method="post">
+      {% csrf_token %}
+        {{form}}
+        <div>
+          <input class="boton1 boton-form" type="submit" value="Enviar" onclick="usuarioCreado()">
+        </div>
+        {% if 'register' in request.GET %}
+        <p class="exito">Usuario registrado correctamente.</p>
+        {% endif %}
+    </form>
+  </div>
+
+</div>
+{% endblock %}
+</html>

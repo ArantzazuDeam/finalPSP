@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+<div class="contenido">
+    <a href="{% url 'carta'%}"><button class="boton3">Atrás</button></a>
+    <h1>Crear plato</h1>
+</div>
+
+<div class="contenido contenido2">
+  <div class="formulario">
+    
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="fila1">
+        <label class="col-izq">Nombre:</label>
+        <div class="col-dch">{{form.nombre}}</div>
+      </div>
+
+      <div class="fila1">
+        <label class="col-izq">Descripcion:</label>
+        <div class="col-dch">{{form.descripcion}}</div>
+      </div>
+
+      <div class="fila1">
+        <label class="col-izq">Categoría:</label>
+        <div class="col-dch">{{form.categoria}}</div>
+      </div>
+
+
+      <div class="fila1">
+        <label class="col-izq">Precio:</label>
+        <div class="col-dch">{{form.precio}}</div>
+      </div>
+      
+      <div class="fila1">
+        <label class="col-izq">Foto:</label>
+        <div class="col-dch">{{form.foto}}</div>
+      </div>
+      
+      <div class="fila1">
+        <label class="col-izq">Menú:</label>
+        <div class="col-dch">{{form.tipo_menu}}</div>
+      </div>    
+      
+      <div>
+          <input class="boton1 boton-form" type="submit" value="Crear">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+</html>

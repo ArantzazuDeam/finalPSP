@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+  <div class="contenido">
+    <a href="{% url 'restaurante'%}"><button class="boton3">Atrás</button></a>
+    
+    {% if user.is_superuser == True %}
+    <a href="{% url 'crearPlato'%}"><button class="boton3">Crear plato</button></a>
+    {% endif %}
+    
+    <h1>Platos</h1>        
+  </div>
+  
+  {% for c in categorias %}
+  <div class="contenido contenido2">
+    <h3>{{c.nombre}}</h3>
+    <p>{{c.descripcion}}</p>
+    <ul>
+    {% for p in platos %}
+      {% ifequal p.categoria.nombre c.nombre%}
+        <li>
+          <a href="{% url 'plato' p.id %}" title="Conoce el plato">
+            {{p.nombre}}. {{p.precio}}€  (+info.)
+          </a>
+        </li>
+      {% endifequal %}
+    {% endfor %}
+    </ul>  
+  </div>
+  {% endfor %}
+  
+{% endblock %}
+
+</html>

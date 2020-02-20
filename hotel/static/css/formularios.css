@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+.boton-form{
+	margin-top: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.formulario{
+	padding: 10px;
+}
+
+.fila1{
+	overflow: hidden;
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-right: 10%;
+}
+
+.col-izq{
+	float: left;
+	width: 20%;
+}
+
+.col-dch{
+	float: right;
+	width: 76%;
+}
+
+.col-dch-ingreso{
+	float: right;
+	width: 60%;
+}
+
+.error{
+    color: red;
+    background-color: black;
+}
+
+.exito{
+	color: green;
+	background-color: black;
+}

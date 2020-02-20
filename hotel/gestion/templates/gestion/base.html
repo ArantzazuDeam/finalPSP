@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>  
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}" >  
+  <link rel="stylesheet" href="{% static 'css/restaurante.css' %}" > 
+  <link rel="stylesheet" href="{% static 'css/formularios.css' %}">
+  <script src="{% static 'js/funciones.js' %}"  ></script>
+
+  <!--
+  <script src="js/jquery-3.4.1.slim.min.js"></script>
+  -->
+  <title>Inicio</title>
+</head>
+
+<body class="cuerpo">
+  <!--Cabecera-->
+  <a href="/" title="Ir a inicio">
+  <div class="cabecera">    
+    <h1>HOSTAL CASAVERDE</h1>
+  </div>
+  </a>
+
+  <!--Menú-->
+  <div class="menu">
+    <ul>
+      <li> <a href="{% url 'habitaciones' %}">Habitaciones</a> </li>
+      <li> <a href="{% url 'reservas' %}">Reservas</a> </li>
+      <li> <a href="{% url 'eventos' %}">Eventos</a> </li>
+      <li> <a href="{% url 'restaurante' %}">Restaurante</a> </li>
+      <li> <a href="">Contacto</a> </li>
+
+      <!--LOGIN-->   
+      {% if not request.user.is_authenticated %}
+        <li class="derecha"> <a href="{% url 'login' %}">Iniciar sesión</a> </li>     
+      {% else %}
+        <li class="derecha" onclick="logout()"> <a href="{% url 'logout' %}">Cerrar sesión</a> </li>
+      {% endif %}
+
+      <!--SIGN UP-->
+      <li class="derecha"> <a href="{% url 'signup' %}">Registrate</a> </li> 
+
+    </ul>
+
+  </div>
+
+  <!--Contenedor principal-->
+  <div class="contenedor">
+  {% block content %}
+  {% endblock %}
+  </div>
+
+  <footer>
+
+  </footer>
+</body>
+<footer class="footer">
+  <div class="caja">
+    <p>Copyright 2020</p>
+  </div>
+  
+  <div class="caja">
+    <p>Arantzazu De Alba</p>
+  </div>
+  
+  <div class="caja">
+    <p>Todos los derechos reservados</p>
+  </div>    
+</footer>
+</html>

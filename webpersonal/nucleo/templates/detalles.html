@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <script src="{% static 'js/funciones.js' %}"></script>
+    <title>Datos Empleado</title>
+</head>
+
+<body>
+    {% if emple %}
+        <h1>¿Dónde trabaja {{ emple.nombre }}?</h1>
+        
+        {% if emple.emp %}
+            <p> {{ emple.nombre }} trabaja para {{ emple.emp.nom }}</p>
+        {% else %}
+            <p>{{emple}} no trabaja para ninguna empresa. </p>
+        {% endif%}
+
+    {% else %}
+        <p>No existe empleado con ese identificador.</p>
+    {% endif %}
+
+    <button onclick="mostrarAlerta('Espero que sea un buen empleado.')">
+        Mostrar mensaje
+    </button>
+</body>
+</html>

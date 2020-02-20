@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+<div class="contenido">
+    <a href="{% url 'restaurante'%}"><button class="boton3">Atrás</button></a>
+  <h1>Menus</h1>
+</div>
+
+  {% for m in menus %}
+  <div class="contenido contenido2">
+    <h3>{{m.nombre}}</h3>
+    <p>{{ m.descripcion_dias }} De {{m.hora_inicio}}h a {{m.hora_fin}}h. Precio: {{m.precio}} €</p>
+    <p>Platos que incluye:</p>
+    <ul>
+    {% for p in platos %}
+      {% for mp in p.tipo_menu.all%}
+        {% ifequal mp.nombre m.nombre%}
+          <li>{{p.nombre}}</li>
+        {%endifequal%}
+      {%endfor%}      
+    {% endfor %}
+    </ul>
+
+  </div>
+  {% endfor %}
+
+{% endblock %}
+
+</html>

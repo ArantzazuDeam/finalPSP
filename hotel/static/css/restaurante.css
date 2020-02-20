@@ -1,0 +1,105 @@
+.contenido{
+    text-align: center;
+}
+
+.contenido h3{
+	margin-bottom:0;
+}
+
+.contenido p{
+	margin-top: 2px;
+}
+
+.contenido2{
+	text-align: left;
+}
+
+.contenido2 h3{
+	margin-top: 30px;
+}
+
+.contenido2 h3:first-child{
+	margin-top: 0;
+}
+
+.contenido2 ul li a:hover{
+	color: #52efef;
+	text-decoration-line: underline;
+}
+
+.contenido2 img{
+	float: left;
+	overflow: inherit
+}
+
+.plato{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20px;
+}
+
+.descripcion{
+	float:right;
+	width: 60%;
+	margin:0;
+}
+
+/* Visualización de las tarjetas. */
+.fila{
+    margin-left:9%;
+	margin-top: 20px ;
+	padding: 0;
+}
+
+.fila:after{	
+	display: table;
+	clear: both;
+}
+
+.columna{
+/*    margin-left: 9%;    */
+    margin-bottom: 20px;
+    margin-right: 3.5%;
+	float: left;
+	width: 44%;
+	padding: 0;
+	height: 100% !important;
+}
+
+.tarjeta{	
+	padding: 0;	
+	padding-top: 12px;
+	margin: 0;	
+	text-align: center;
+    background-color: #484848;
+    background-image: linear-gradient(to bottom right, #3a403b, #153620);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.8);
+    height: 100% !important;
+    border-radius: 4px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tarjeta p{
+	position: relative;
+	margin: 12px;
+	vertical-align: middle;
+}
+
+.tarjeta p span{
+	font-weight: bold;
+}
+
+/* Visualización responsive de las tarjetas. */
+@media screen and (max-width: 600px){
+    .fila{
+        margin-left: 4%;
+    }
+    .columna{
+		width: 96%;
+        display: block;
+        padding-left: 0;
+        margin-left:0;
+		margin-bottom: 20px;
+	}
+}

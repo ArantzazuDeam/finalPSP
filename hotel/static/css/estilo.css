@@ -1,0 +1,213 @@
+.cuerpo{
+    margin: 0;
+    padding: 0;
+
+}
+
+.cuerpo a{
+    text-decoration: none;
+    color: white;
+}
+
+.cabecera{
+    margin: 0;    
+    position: relative;
+    position: relative;
+	padding: 10px;
+    left:0;
+	top: 0;
+	background-image: url("../images/verde.jpg");
+	color: #fff;
+	text-align: center;
+	text-shadow: 2px 2px #25633a;
+	overflow: auto;
+	font-family: "Avantgarde";
+    text-decoration: none;
+}
+
+.cabecera a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #25633a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu ul li{    
+    float: left;
+}
+
+.menu ul li a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu ul .derecha{
+    float: right;
+}
+
+.menu ul li a:hover{
+    background-color: #11301c;
+}
+
+
+.contenedor{
+    margin: 0;
+    padding: 0;
+   /* background: url('../images/madera-background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    background-color: #828282; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #d0ccfc,  #ffe3ee, #ffefb3, #cfffde,  #ffefb3, #ffe3ee, #d0ccfc);
+    position:absolute;
+	padding-bottom: 150px;
+	width: 100%;
+}
+
+.contenedor h1{
+    margin: 0;
+}
+
+
+.footer{
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	bottom: 0;
+	background-color: #2E3436; /*#4F6261 #105D5B #147E7B #537A79 #565858*/
+	color: #D0F4F3;/*#147E7B #eee*/
+	width: 100%;
+	clear: both;
+	opacity: 0.9;
+	font-family: "Avantgarde";
+	font-size: 0.9em;
+}
+
+.caja{
+    text-align: center;
+	float: left;
+	width:  32%;
+}
+
+/*CONTENIDO*/
+
+.contenido{
+    margin: 20px 9% 0 9%;
+    padding: 20px;
+    width: 80%;
+    background-color: #484848;
+    background-image: linear-gradient(to bottom right, #3a403b, #153620);
+    opacity: 0.85;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.8);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenido h1{
+    text-align: center;
+}
+
+.contenido ul li{
+	list-style-type: none;
+	list-style: none;
+	padding-left: 0;
+}
+
+/* BOTONES */
+/* BOTONES */
+/* Botón 1. Flecha hacia la derecha. */
+.boton1{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	background-color: #25633a;
+	border: none;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	vertical-align: middle;	
+	font-weight: bold;
+	font-size: 1.05em;
+}
+
+.boton1 span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.boton1 span:after{
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.boton1:hover span{
+	padding-right: 25px;
+}
+
+.boton1:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
+/* Botón 3. Botón que cambia de color al posicionarse encima el cursor. */
+.boton3{
+	position: relative;
+	bottom: 0;
+	width: 100px;
+	margin-bottom: 0;
+	margin-left: 12px;
+	margin-right: 0;
+	background-color: #25633a;
+	border: none;
+	border-radius: 4px;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+	vertical-align: middle;	
+	font-weight: bold;
+	font-size: 0.9em;
+	transition: 0.1s;
+	opacity: 0.8;
+	display:inline;
+	float: right;
+}
+
+.boton3:hover{
+	opacity: 1;
+}
+
+/* Visualización responsive de las tarjetas. */
+@media screen and (max-width: 600px){
+	.contenido{
+		display: block;
+        margin: 20px 0 0 4%;
+        margin-bottom: 20px;
+        width: 82%;
+	}
+}

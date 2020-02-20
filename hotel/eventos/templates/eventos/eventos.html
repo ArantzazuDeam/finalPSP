@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+{% extends 'gestion/base.html' %}
+{% block content %}
+<div class="contenido">
+  <h1>Eventos</h1>
+</div>
+
+<div class="contenido">
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Lugar</th>
+        <th>Equipo organizador</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for e in eventos%}
+      <tr>
+        <td>{{ e.fecha }}</td>
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.descripcion }}</td>
+        <td>{{ e.lugar }}</td>
+        <td><a href="" class="boton3">{{ e.equipo }}</td>
+        <td><a href="/eventos/{{e.id}}" class="boton3">EDITAR</td>
+        <td><a href="" class="boton3">ELIMINAR</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+</html>

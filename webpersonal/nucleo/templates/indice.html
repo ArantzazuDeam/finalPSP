@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de empleados</title>
+</head>
+<body>
+    {% load staticfiles %}
+    <img src="{% static 'img/logo.png' %}" />
+
+    <h1>EMPLEADOS</h1>
+    {% if empleados %}
+    <ul>
+        {%  for e in empleados %}
+        <li> {{ e }} </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>No hay empleados en nuestro sistema.</p>
+    {% endif %}
+
+    <h2>Otros enlaces de la web:</h2>
+    <ul>
+        <li><a href='Empresas'>Empresas</a></li>
+        <li><a href='fecha'>Fecha</a></li>
+        <li><a href='detalle/1'>Empleado 1</a></li>
+    </ul>
+
+</body>
+</html>

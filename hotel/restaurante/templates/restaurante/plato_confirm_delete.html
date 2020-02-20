@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+<div class="contenido">
+  <a href="{% url 'carta'%}"><button class="boton3">Atrás</button></a>
+  <h1>{{plato.nombre}}</h1>
+</div>
+
+<div class="plato">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>¿Está seguro de eliminar este plato?</p>
+        <input class="boton1 boton-form" type="submit" value="Eliminar">
+    </form>
+
+</div>
+
+{% endblock %}
+
+</html>

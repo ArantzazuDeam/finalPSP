@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'gestion/base.html' %}
+{% load static %}
+<html lang="es">
+
+{% block content %}
+<div class="contenido">
+  <a href="{% url 'carta'%}"><button class="boton3">Atrás</button></a>
+  {% if user.is_superuser == True %}
+  <a href="{% url 'eliminarPlato' plato.id%}"><button class="boton3">Eliminar</button></a>
+  <a href="{% url 'editarPlato' plato.id %}"><button class="boton3">Editar</button></a>
+  {% endif %}
+  <h1>{{plato.nombre}}</h1>
+</div>
+
+<div class="plato">
+  <img src="{{plato.foto.url}}" width="240" height="140">
+  <div class="contenido contenido2 descripcion">
+
+      <ul>
+        <li>{{plato.descripcion}}</li>
+        <li>Categoría: {{plato.categoria}}</li>
+        <li>Precio: {{plato.precio}} €</li>    
+      </ul>
+    </div>
+      
+</div>
+
+{% endblock %}
+
+</html>
